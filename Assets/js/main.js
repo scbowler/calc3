@@ -19,17 +19,31 @@ function numButtonPush(num, element){
     if(round > 0){
         calcDisplay.value = "";
         round = 0;
+        mathArray = ['', ''];
+        result = null;
     }
     
     calcDisplay.value += num;
 }
 
-//NEEDS WORK!!!
 function opButtonPush(op, element){
     pushAnimation(element);
+    disArray = calcDisplay.value.split(" ");
+    round = 0;
+    
+    if(result != null){
+        calcDisplay.value = result;
+        result = null;
+    }
+    
+    if(disArray[disArray.length-1] == ''){
+        disArray.pop();
+        disArray[disArray.length-1] = op;
+        calcDisplay.value = disArray.join(' ') + " ";
+        return;
+    }
     
     calcDisplay.value += ' ' + op + ' ';
-    round = 0;
 }
 
 function equals(element){
@@ -43,12 +57,14 @@ function equals(element){
     } 
     
     result = getResult();
-    calcDisplay.value = result;
+    calcDisplay.value += "\n = " + result;
     round++;
 }
 
 function backspace(element){
-    pushAnimation(element);
+    if(element !== undefined){
+        pushAnimation(element);
+    }
     
     disString = calcDisplay.value;
     var length = disString.length;
@@ -58,6 +74,12 @@ function backspace(element){
     if(lastChar == " "){
         backspace(element);
     }
+}
+
+//inprogress
+function doSqrt(){
+    //disString = calcDisplay.value;
+    
 }
 
 function changeSign(element){
@@ -74,7 +96,6 @@ function changeSign(element){
         if(areNums(parseFloat(lastChar), 0)){
             disArray = disString.split(' ');
             disArray[disArray.length-1] = disArray[disArray.length-1] * -1;
-            console.log(disArray);
             calcDisplay.value = disArray.join(' ');
             return;
         }else{
@@ -86,7 +107,6 @@ function changeSign(element){
     calcDisplay.value += "-";
 }
 
-//NEEDS WORK!!!
 function mainReset(){
     calcDisplay.value = '';
     arrayIndex = 0;
@@ -94,7 +114,6 @@ function mainReset(){
     numberArray = [];
     result = null;
     round = 0;
-    console.log('reset');
 }
 
 function logReset(){
