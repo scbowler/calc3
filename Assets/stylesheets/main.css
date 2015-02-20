@@ -1,0 +1,61 @@
+@font-face {
+    font-family: digital;
+    src: url('../fonts/digital-7.ttf')
+}
+
+body {
+    background: -webkit-linear-gradient(#e6e6e6, #fff); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#e6e6e6, #fff); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#e6e6e6, #fff); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#e6e6e6, #fff); /* Standard syntax */
+    background-repeat: no-repeat;
+}
+
+table{
+    display: inline-block;
+    font-size: 30px;
+    margin: 10px 20px;
+    text-align: center;
+    border-spacing: 10px;
+}
+
+td {
+    height: 50px;
+    width: 50px;
+    border-radius: 5px;
+    background-color: #999;
+    color: #fff;
+    cursor: pointer;
+    box-shadow: 1px 1px 2px #000;
+}
+
+#screen {
+    font-family: digital;
+    height: 290px;
+    text-align: right;
+    font-size: 40px;
+    width: 275px;
+    margin: 15px 20px;
+    border: 1px solid #000;
+    border-radius: 5px;
+}
+
+.container {
+    display: block;
+    background-color: #b2c2f0;
+    border-radius: 10px;
+    width: 681px;
+    margin: 100px auto;
+    border: 1px solid #000;
+}
+
+#sqrt {
+    font-size: 22px;
+}
+
+.push {
+    box-shadow: none;
+    position: relative;
+    top: 3px;
+    left: 3px;
+}

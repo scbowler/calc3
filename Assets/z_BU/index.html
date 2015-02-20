@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Calc</title>
+    <link rel="stylesheet" href="Assets/stylesheets/main.css">
+    <link href='http://fonts.googleapis.com/css?family=Permanent+Marker' rel='stylesheet' type='text/css'>
+    <script src="Assets/js/main.js"></script>
+</head>
+
+<body onload="inital()">
+    <section class="container">
+        <input type="text" id="screen" disabled>
+        <div id="log-reset" onclick="logReset()">Reset Log</div>
+        <section class="inside-cont">
+           <table id="numbers">
+            <tr>
+                <td id="seven" onclick="numButtonPush('7', this)">7</td>
+                <td id="eight" onclick="numButtonPush('8', this)">8</td>
+                <td id="nine" onclick="numButtonPush('9', this)">9</td>
+                <td class="op" id="add" onclick="opButtonPush('+', this)">&#43;</td>
+                <td id="sign" onclick="changeSign(this)">&plusmn;</td>
+            </tr>
+            <tr>
+                <td id="four" onclick="numButtonPush('4', this)">4</td>
+                <td id="five" onclick="numButtonPush('5', this)">5</td>
+                <td id="six" onclick="numButtonPush('6', this)">6</td>
+                <td class="op" id="subtract" onclick="opButtonPush('-', this)">&ndash;</td>
+                <td id="clear" onclick="mainReset(), pushAnimation(this)" rowspan="4"><div id="reset-text">c l e a r</div></td>
+            </tr>
+            <tr>
+                <td id="one" onclick="numButtonPush('1', this)">1</td>
+                <td id="two" onclick="numButtonPush('2', this)">2</td>
+                <td id="three" onclick="numButtonPush('3', this)">3</td>
+                <td class="op" id="multiply" onclick="opButtonPush('*', this)">&times;</td>
+            </tr>
+            <tr>
+                <td colspan="2" id="zero" onclick="numButtonPush('0', this)">0</td>
+                <td id="decimal" onclick="numButtonPush('.', this)">.</td>
+                <td class="op" id="divide" onclick="opButtonPush('/', this)">&divide;</td>
+            </tr>
+            <tr>
+                <td id="equal" onclick="doMath(), pushAnimation(this)" colspan="4">=</td>
+            </tr>
+        </table>
+            <textarea type="text" id="mathLog" disabled></textarea>
+        </section>
+    </section>
+    
+</body>
+</html>    
