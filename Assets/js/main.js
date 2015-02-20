@@ -8,11 +8,11 @@ function inital(){
     arrayIndex = 0;
     calcDisplay = document.querySelector('#screen');
     result = null;
+    //logDisplay=  --[ in progress ]--
     errorStr = "";
     round = 0;
 }
 
-//NEEDS WORK!!!
 function numButtonPush(num, element){
     pushAnimation(element);
     
@@ -48,6 +48,10 @@ function opButtonPush(op, element){
 
 function equals(element){
     pushAnimation(element);
+    
+    if(result != null){
+        return;
+    }
     
     disArray = calcDisplay.value.split(' ');
     var length = disArray.length;
@@ -92,7 +96,6 @@ function changeSign(element){
     }
     
     if( lastChar == '-' || lastChar != ' '){
-        console.log(lastChar);
         if(areNums(parseFloat(lastChar), 0)){
             disArray = disString.split(' ');
             disArray[disArray.length-1] = disArray[disArray.length-1] * -1;
